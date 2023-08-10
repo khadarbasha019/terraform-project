@@ -46,7 +46,7 @@ EOF
 resource "aws_instance" "three" {
   ami             = "ami-0eb260c4d5475b901"
   instance_type   = "t2.micro"
-  key_name        = "terraform"
+  key_name        = "calterra"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "eu-west-2a"
   tags = {
@@ -57,7 +57,7 @@ resource "aws_instance" "three" {
 resource "aws_instance" "four" {
   ami             = "ami-0eb260c4d5475b901"
   instance_type   = "t2.micro"
-  key_name        = "terraform"
+  key_name        = "calterra"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "eu-west-2b"
   tags = {
