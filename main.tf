@@ -8,7 +8,7 @@ secret_key = "ch8EkqWR3dPLFJVfO29NPJFJgOh8T3PLgYDASKBY"
 resource "aws_instance" "one" {
   ami             = "ami-0eb260c4d5475b901"
   instance_type   = "t2.micro"
-  key_name        = "calterra"
+  key_name        = "landonterra"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "eu-west-2a"
   user_data       = <<EOF
@@ -27,7 +27,7 @@ EOF
 resource "aws_instance" "two" {
   ami             = "ami-0eb260c4d5475b901"
   instance_type   = "t2.micro"
-  key_name        = "calterra"
+  key_name        = "landonterra"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "eu-west-2b"
   user_data       = <<EOF
@@ -46,7 +46,7 @@ EOF
 resource "aws_instance" "three" {
   ami             = "ami-0eb260c4d5475b901"
   instance_type   = "t2.micro"
-  key_name        = "calterra"
+  key_name        = "landonterra"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "eu-west-2a"
   tags = {
@@ -57,7 +57,7 @@ resource "aws_instance" "three" {
 resource "aws_instance" "four" {
   ami             = "ami-0eb260c4d5475b901"
   instance_type   = "t2.micro"
-  key_name        = "calterra"
+  key_name        = "landonterra"
   vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "eu-west-2b"
   tags = {
