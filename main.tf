@@ -1,16 +1,16 @@
 #this file consists of code for instances and sg
 provider "aws" {
-region = "eu-west-2"
+region = "us-east-2"
 access_key = "AKIA3JSCJKFRHZAFUXAX"
 secret_key = "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"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-0eb260c4d5475b901"
+  ami             = "ami-024e6efaf93d85776"
   instance_type   = "t2.micro"
-  key_name        = "landonterra"
+  key_name        = "Ohio"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "eu-west-2a"
+  availability_zone = "us-est-2a"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -25,11 +25,11 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-0eb260c4d5475b901"
+  ami             = "ami-024e6efaf93d85776"
   instance_type   = "t2.micro"
-  key_name        = "landonterra"
+  key_name        = "Ohio"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "eu-west-2b"
+  availability_zone = "us-east-2b"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -44,22 +44,22 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = "ami-0eb260c4d5475b901"
+  ami             = "ami-024e6efaf93d85776"
   instance_type   = "t2.micro"
-  key_name        = "landonterra"
+  key_name        = "Ohio"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "eu-west-2a"
+  availability_zone = "us-east-2a"
   tags = {
     Name = "app-server-1"
   }
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-0eb260c4d5475b901"
+  ami             = "ami-024e6efaf93d85776"
   instance_type   = "t2.micro"
-  key_name        = "landonterra"
+  key_name        = "Ohio"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "eu-west-2b"
+  availability_zone = "us-east-2b"
   tags = {
     Name = "app-server-2"
   }
@@ -90,7 +90,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "khadarterras3bucket007"
+  bucket = "khadarterras3bucket7799"
 }
 
 resource "aws_iam_user" "seven" {
@@ -105,8 +105,8 @@ default = ["user1", "user2", "user3", "user4"]
 }
 
 resource "aws_ebs_volume" "eight" {
- availability_zone = "eu-west-2a"
-  size = 40
+ availability_zone = "us-east-2a"
+  size = 20
   tags = {
     Name = "ebs-001"
   }
