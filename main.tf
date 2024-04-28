@@ -6,11 +6,11 @@ secret_key = "3J5zWeqfRQ7PJllDY6TGCQ47whfjHx+10BLtM5Xt"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-024e6efaf93d85776"
+  ami             = "ami-00022b9723b208526"
   instance_type   = "t2.micro"
-  key_name        = "Ohio"
+  key_name        = "hyd-ec2-key"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-est-2a"
+  availability_zone = "ap-west-1a"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -25,11 +25,11 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-024e6efaf93d85776"
+  ami             = "ami-00022b9723b208526"
   instance_type   = "t2.micro"
-  key_name        = "Ohio"
+  key_name        = "hyd-ec2-key"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-east-2b"
+  availability_zone = "ap-west-1b"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -44,22 +44,22 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = "ami-024e6efaf93d85776"
+  ami             = "ami-00022b9723b208526"
   instance_type   = "t2.micro"
-  key_name        = "Ohio"
+  key_name        = "hyd-ec2-key"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-east-2a"
+  availability_zone = "ap-west-1a"
   tags = {
     Name = "app-server-1"
   }
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-024e6efaf93d85776"
+  ami             = "ami-00022b9723b208526"
   instance_type   = "t2.micro"
-  key_name        = "Ohio"
+  key_name        = "hyd-ec2-key"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-east-2b"
+  availability_zone = "ap-west-1b"
   tags = {
     Name = "app-server-2"
   }
@@ -105,7 +105,7 @@ default = ["user1", "user2", "user3", "user4"]
 }
 
 resource "aws_ebs_volume" "eight" {
- availability_zone = "us-east-2a"
+ availability_zone = "ap-west-1a"
   size = 20
   tags = {
     Name = "ebs-001"
