@@ -10,14 +10,14 @@ resource "aws_instance" "one" {
   instance_type   = "t2.micro"
   key_name        = "hyd-ec2-key"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-west-1a"
+  availability_zone = "ap-south-2a"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
 yum install httpd -y
 systemctl start httpd
 chkconfig httpd on
-echo "hai all this is my app created by terraform infrastructure by kahdar server-1" > /var/www/html/index.html
+echo "hai all this is my app created by terraform infrastructure by khadar server-1" > /var/www/html/index.html
 EOF
   tags = {
     Name = "web-server-1"
@@ -29,7 +29,7 @@ resource "aws_instance" "two" {
   instance_type   = "t2.micro"
   key_name        = "hyd-ec2-key"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-west-1b"
+  availability_zone = "ap-south-2b"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -48,7 +48,7 @@ resource "aws_instance" "three" {
   instance_type   = "t2.micro"
   key_name        = "hyd-ec2-key"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-west-1a"
+  availability_zone = "ap-south-2a"
   tags = {
     Name = "app-server-1"
   }
@@ -59,7 +59,7 @@ resource "aws_instance" "four" {
   instance_type   = "t2.micro"
   key_name        = "hyd-ec2-key"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "ap-west-1b"
+  availability_zone = "ap-south-2b"
   tags = {
     Name = "app-server-2"
   }
@@ -105,7 +105,7 @@ default = ["user1", "user2", "user3", "user4"]
 }
 
 resource "aws_ebs_volume" "eight" {
- availability_zone = "ap-west-1a"
+ availability_zone = "ap-south-2a"
   size = 20
   tags = {
     Name = "ebs-001"
