@@ -90,7 +90,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "khadarterras3bucket7799"
+  bucket = "khadarterras3bucket019"
 }
 
 resource "aws_iam_user" "seven" {
