@@ -1,6 +1,6 @@
 resource "aws_elb" "bar" {
   name               = "khadar-terraform-elb"
-  availability_zones = ["ap-south-1a", "ap-south-1b"]
+  availability_zones = ["ap-south-2a", "ap-south-2b"]
 
   listener {
     instance_port     = 80
