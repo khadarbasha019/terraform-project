@@ -88,9 +88,8 @@ resource "aws_security_group" "five" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
 resource "aws_s3_bucket" "six" {
-  bucket = "khadarterras3bucket019"
+bucket = "khadarterras3bucket019"
 }
 
 resource "aws_iam_user" "seven" {
